@@ -25,6 +25,9 @@ const {
   CommentRepository,
 } = require("../repositories");
 
+//services
+const { UserService, IdeaService, CommentService } = require("../services");
+
 const container = createContainer();
 
 container
@@ -51,6 +54,11 @@ container
     UserRepository: asClass(UserRepository).singleton(),
     IdeaRepository: asClass(IdeaRepository).singleton(),
     CommentRepository: asClass(CommentRepository).singleton(),
+  })
+  .register({
+    UserService: asClass(UserService).singleton(),
+    IdeaService: asClass(IdeaService).singleton(),
+    CommentService: asClass(CommentService).singleton(),
   });
 
 module.exports = container;
