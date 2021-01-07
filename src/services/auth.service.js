@@ -7,7 +7,6 @@ class AuthService {
 
   async signUp(user) {
     const { username } = user;
-    console.log(_userService)
     const userExist = await _userService.getUserByUsername(username);
     if (userExist) {
       const error = new Error();
