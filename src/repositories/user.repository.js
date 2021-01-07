@@ -1,5 +1,6 @@
 const BaseRepository = require("./base.repository");
 let _user = null;
+
 class UserRepository extends BaseRepository {
   constructor({ User }) {
     super(User);
@@ -7,6 +8,7 @@ class UserRepository extends BaseRepository {
   }
 
   async getUserByUsername(username) {
+    console.log(_user)
     return await _user.findOne({ username });
   }
 }
